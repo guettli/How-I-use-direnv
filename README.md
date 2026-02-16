@@ -53,3 +53,11 @@ There are two directories I trust, because they contain trusted git repos. Chang
 ## Nix
 
 Direnv works well together with Nix. I describe that here: [guettli/switching-to-nix: Switching to Nix](https://github.com/guettli/switching-to-nix)
+
+## Feedback welcome
+
+Feedback is welcome. Just open an issue and tell me what you think.
+
+## More
+
+[Thomas WOL: Working out Loud](https://github.com/guettli/wol)
