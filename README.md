@@ -11,8 +11,8 @@ Direnv reads `.envrc` files and sets up your environment accordingly.
 ```sh
 # shellcheck shell=bash
 
-# .envrc file of direnv.
-# If you use vsode, pleaes use the `direnv` extension.
+# .envrc file for direnv.
+# If you use VS Code, please use the `direnv` extension.
 # https://marketplace.visualstudio.com/items?itemName=mkhl.direnv
 
 # Use nix-direnv
@@ -39,7 +39,7 @@ don’t use Nix (yet).
 
 Next, I update `PATH` so executables from the environment are found first.
 
-In the last line (`dotenv`), I load secrets from a `.env` file. If you keep secrets out of `.envrc`,
+In the last line (`dotenv_if_exists`), I load secrets from a `.env` file. If you keep secrets out of `.envrc`,
 you can commit `.envrc` to Git so all team members get the same environment.
 
 ## Config
@@ -55,8 +55,8 @@ log_filter = "^$"
    prefix = [ "/home/guettli/projects", "/home/guettli/syself" ]
 ```
 
-There are two directories I trust, because they contain trusted git repos. Changes to `.envrc` files
-in that directories need no manual approval.
+There are two directories I trust, because they contain trusted Git repos. Changes to `.envrc` files
+in those directories need no manual approval.
 
 ## Nix
 
