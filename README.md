@@ -58,6 +58,22 @@ log_filter = "^$"
 There are two directories I trust, because they contain trusted Git repos. Changes to `.envrc` files
 in those directories need no manual approval.
 
+## Secrets: .env or SOPS?
+
+It is common to store secrets in a `.env` file. This is easy to set up, but it has drawbacks:
+
+- Several developers need to sync the .env files.
+- In CI config you often need these values, too.
+- No version control. You don't see when a value was updated.
+
+A pragmatic solution: Only store `SOPS_AGE_KEY` in .env and in CI. [SOPS](https://getsops.io/)
+enables you to keep the keys readable, and only encrypt the values. The encrypted values get stored
+in `git`, so that changes to that file are visible. This means, you have only **one** place where
+the credentials are stored: in your git repo. No worries, the secrets are encrypted. All you need is
+`SOPS_AGE_KEY`.
+
+
+
 ## Nix
 
 Direnv works well together with Nix. I describe that here: [guettli/switching-to-nix: Switching to
